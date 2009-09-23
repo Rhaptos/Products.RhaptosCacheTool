@@ -1,0 +1,7 @@
+RhaptosCacheTool-0.1.1
+  - quickperf (30 Sept 2008)
+    - logging added to see how much this is used
+
+RhaptosCacheTool-0.1
+  - Initial creation. Based on Minimal Plone Tool. Provides common object
+    for implementing a search/browse object cache.
