@@ -4,7 +4,7 @@ from OFS.PropertyManager import PropertyManager
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import UniqueObject
-from Products.CMFCore import CMFCorePermissions
+from Products.CMFCore import permissions
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
 import md5
 import zLOG
@@ -45,7 +45,7 @@ class cache(UniqueObject, PropertyManager,
         return newState
 
 
-    security.declareProtected(CMFCorePermissions.ManagePortal, "resultsCacheInject")
+    security.declareProtected(permissions.ManagePortal, "resultsCacheInject")
     def resultsCacheInject(self, searchhash, record):
         """Insert values for a search/browse results key as a tuple 
         (result,term_results,sort_on) into the cache, using the provided 
@@ -117,7 +117,7 @@ class nocache(UniqueObject, PropertyManager,
 #        return newState
 
 
-    security.declareProtected(CMFCorePermissions.ManagePortal, "resultsCacheInject")
+    security.declareProtected(permissions.ManagePortal, "resultsCacheInject")
     def resultsCacheInject(self, searchhash, record):
         """Insert values for a search/browse results key as a tuple 
         (result,term_results,sort_on) into the cache, using the provided 
